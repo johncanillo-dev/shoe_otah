@@ -1,0 +1,26 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npx mix watch",
+        "watch": "npx mix watch",
+        "watch-poll": "npx mix watch -- --watch-options-poll=1000",
+        "hot": "npx mix watch --hot",
+        "prod": "npx mix --production",
+        "build": "npx mix --production"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.24.0",
+        "autoprefixer": "^10.4.18",
+        "axios": "^1.6.0",
+        "laravel-mix": "^6.0.49",
+        "lodash": "^4.17.19",
+        "postcss": "^8.4.35",
+        "tailwindcss": "^3.4.1",
+        "webpack": "~5.76.0"
+    },
+    "dependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-router-dom": "^6.22.0"
+    }
+}
