@@ -8,11 +8,19 @@ const CustomerDashboard = () => {
 
   const fetchOrders = async () => {
     setLoading(true);
+    setError('');
     try {
       const res = await api.get('/orders');
       setOrders(res.data || []);
     } catch (err) {
-      setError('Failed to load orders');
+      if (err.response?.status === 401) {
+        setError('Authentication required. Please log in again.');
+      } else if (err.response?.status === 403) {
+        setError('You do not have permission to view your orders.');
+      } else {
+        setError('Failed to load orders. Please try again later.');
+      }
+      console.error('Failed to load orders:', err);
     } finally {
       setLoading(false);
     }

@@ -83,9 +83,19 @@ const Checkout = () => {
             addToast('Order placed successfully! 🎉', 'success');
             setTimeout(() => navigate('/'), 2500);
         } catch (err) {
-            const errorMsg = err.response?.data?.message || 'Failed to place order';
+            let errorMsg = 'Failed to place order';
+            if (err.response?.status === 401) {
+                errorMsg = 'Authentication required. Please log in again.';
+            } else if (err.response?.status === 403) {
+                errorMsg = 'You do not have permission to place orders.';
+            } else if (err.response?.status === 400) {
+                errorMsg = err.response?.data?.message || 'Invalid order data. Please check your information.';
+            } else {
+                errorMsg = err.response?.data?.message || 'Failed to place order. Please try again later.';
+            }
             setError(errorMsg);
             addToast(errorMsg, 'error');
+            console.error('Failed to place order:', err);
         } finally {
             setLoading(false);
         }

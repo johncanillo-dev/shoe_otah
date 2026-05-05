@@ -17,5 +17,25 @@ api.interceptors.request.use((config) => {
     return config;
 });
 
+// Handle 401 errors (unauthorized)
+api.interceptors.response.use(
+    response => response,
+    error => {
+        if (error.response?.status === 401) {
+            // Clear invalid token and redirect to login
+            localStorage.removeItem('token');
+            delete api.defaults.headers.common['Authorization'];
+            
+            // Only redirect if not already on login/register page
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/login' && currentPath !== '/register') {
+                // Silently fail for API calls - let the component handle it
+                // Don't redirect to avoid disrupting UX
+            }
+        }
+        return Promise.reject(error);
+    }
+);
+
 export default api;
 

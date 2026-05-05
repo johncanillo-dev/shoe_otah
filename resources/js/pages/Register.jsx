@@ -45,7 +45,7 @@ const Register = () => {
                     <div className="hidden lg:flex flex-col justify-center items-start px-12 text-white">
                         <div className="mb-12">
                             <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                                Shoe Otah
+                                Can-Mavs Boutique
                             </h1>
                             <p className="text-slate-400 text-lg">Premium Footwear Delivery</p>
                         </div>
@@ -93,7 +93,7 @@ const Register = () => {
                     <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
                         <div className="mb-8">
                             <h2 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h2>
-                            <p className="text-gray-600">Join Shoe Otah for premium shopping</p>
+                            <p className="text-gray-600">Join Can-Mavs Boutique for premium shopping</p>
                         </div>
 
                         {error && (

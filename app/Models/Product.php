@@ -22,10 +22,10 @@ class Product extends Model
         'price' => 'decimal:2',
     ];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    public function category() {
+    return $this->belongsTo(\App\Models\Category::class);
+}
+
 
     public function orderItems()
     {

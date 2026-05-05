@@ -88,8 +88,8 @@ const Home = () => {
         <div>
             {/* Hero Section */}
             <div className="mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-8 text-white">
-                <h1 className="text-4xl font-bold mb-2">Welcome to Shoe Otah</h1>
-                <p className="text-indigo-100">Discover our premium collection of shoes</p>
+                <h1 className="text-4xl font-bold mb-2">Welcome to Can-Mavs Boutique</h1>
+                <p className="text-indigo-100">Discover our premium collection of products</p>
             </div>
 
             {/* Search and Filter Section */}
